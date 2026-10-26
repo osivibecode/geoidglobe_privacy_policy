@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Geoid Globe Data</title>
+  <meta name="description" content="Data sources and credits for Geoid Globe, and the ODbL time zone data it is built with.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+  <nav><a href="../">Geoid Globe</a><a href="../privacy-policy.html">Privacy Policy</a><a href="../eula.html">Terms of Use</a></nav>
+
+  <h1>Data and Credits</h1>
+  <p class="muted">Where Geoid Globe's maps come from.</p>
+
+  <h2>Time zones</h2>
+  <p>Time zone boundaries: <a href="https://github.com/evansiroky/timezone-boundary-builder">timezone-boundary-builder</a> by Evan Siroky, built from OpenStreetMap data, made available under the <a href="https://opendatacommons.org/licenses/odbl/1-0/">Open Database License (ODbL) 1.0</a>. © OpenStreetMap contributors.</p>
+  <p>Time zone rules and names: the <a href="https://www.iana.org/time-zones">IANA tz database</a> (public domain).</p>
+
+  <h2>Earth's shape (geoid)</h2>
+  <p>Geoid heights: <a href="https://earth-info.nga.mil/">EGM2008</a>, National Geospatial-Intelligence Agency (NGA), via the PROJ data grids.</p>
+
+  <h2>The app's time zone grid (ODbL)</h2>
+  <p>Geoid Globe uses a simplified grid made from the timezone-boundary-builder data. That grid is a derivative database, so it is offered here under the same licence, the <a href="https://opendatacommons.org/licenses/odbl/1-0/">ODbL 1.0</a>:</p>
+  <ul>
+    <li><a href="zone_index.bin">zone_index.bin</a>: one time zone per point of a 0.5° grid, 361 rows (latitude +90 to −90) × 720 columns (longitude −180 to 179.5), each an unsigned 16-bit little-endian index into zone_names.txt.</li>
+    <li><a href="zone_names.txt">zone_names.txt</a>: one IANA time zone id per line.</li>
+    <li><a href="build_data.py">build_data.py</a>: the script that makes them from <code>timezones-with-oceans.geojson</code> (timezone-boundary-builder releases) and the EGM2008 grid.</li>
+  </ul>
+  <p>You may use, share and adapt this grid under the ODbL. If you publish a database made from it, it must also be under the ODbL, and you must credit timezone-boundary-builder and OpenStreetMap contributors.</p>
+
+  <footer>© 2026 osivibecode. Grid data: ODbL 1.0, © OpenStreetMap contributors and timezone-boundary-builder.</footer>
+</main>
+</body>
+</html>
